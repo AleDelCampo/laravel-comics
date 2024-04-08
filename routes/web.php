@@ -4,7 +4,24 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('homepage');
+    $links = [
+        [
+            'list' => [
+                'CHARACTERS',
+                'COMICS',
+                'MOVIES',
+                'TV',
+                'GAMES',
+                'COLLECTIBLES',
+                'VIDEOS',
+                'FANS',
+                'NEWS',
+                'SHOP',
+            ]
+        ]
+    ];
+
+    return view('homepage')->with('links', $links);
 })->name('home');
 
 Route::get('/item', function () {

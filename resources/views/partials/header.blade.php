@@ -17,3 +17,28 @@
     </div>
 
 </div>
+
+<div id="jumbo-bar">
+
+    <div id="jumbo">
+        <img src="{{ Vite::asset('resources/img/jumbotron.jpg') }}" alt="Jumbotron">
+        <div id="label">
+            <span>CURRENT SERIES</span>
+        </div>
+    </div>
+    
+    
+    
+    <div id="comic-container">
+        @foreach($comics as $comic)
+            <div class="comic">
+                <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
+                <h5>{{ $comic['title'] }}</h5>
+            </div>
+        @endforeach
+    </div>
+
+</div>
+
+
+

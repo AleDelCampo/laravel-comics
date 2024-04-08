@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', function () {
     $links = [
         [
@@ -21,7 +20,9 @@ Route::get('/', function () {
         ]
     ];
 
-    return view('homepage')->with('links', $links);
+    $comics = include(__DIR__ . '/../config/comics.php');
+
+    return view('homepage', compact('comics', 'links'));
 })->name('home');
 
 Route::get('/item', function () {

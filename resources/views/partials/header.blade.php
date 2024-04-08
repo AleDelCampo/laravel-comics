@@ -27,37 +27,8 @@
         </div>
     </div>
     
-    
-    
-    <div id="comic-container">
-        @foreach($comics as $comic)
-            <div class="comic">
-                <img src="{{ $comic['thumb'] }}" alt="{{ $comic['title'] }}">
-                <h5>{{ $comic['title'] }}</h5>
-            </div>
-        @endforeach
-
-        <div>
-            <button id="load-btn" class="pointer">
-                LOAD MORE
-            </button>
-        </div>
-    </div>
-
 </div>
 
-<div id="app-features">
-    <div id="icons-cnt" class="pointer">
-        @foreach($icons as $icon)
-            <div>
-                <img src="{{ $icon['icon'] }}" alt="{{ $icon['caption'] }}">
-            </div>
-            <div>
-                <p>{{ $icon['caption'] }}</p>
-            </div>
-        @endforeach
-    </div>
-</div>
 
 
 

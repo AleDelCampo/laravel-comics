@@ -44,6 +44,12 @@
     }
 }
 
+.comic-link {
+    display: inline-block;
+    width: calc(100% / 6);
+    text-decoration: none; 
+}
+
 #comic-container {
     width: 100%;
     height: auto;

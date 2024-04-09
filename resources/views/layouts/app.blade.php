@@ -11,6 +11,7 @@
 <body>
     
     @include('partials/header')
+    @include('partials/jumbo')
     @include('partials/comics')
     @include('partials/icons')
     @include('partials/footer')

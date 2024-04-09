@@ -99,7 +99,7 @@ Route::get('/', function () {
     return view('homepage', compact('comics', 'links', 'icons', 'linkss'));
 })->name('home');
 
-Route::get('/item', function () {
+Route::get('/item/{id}', function ($id) {
 
     $icons = [
         [
@@ -192,7 +192,18 @@ Route::get('/item', function () {
     $footerlogo = Vite::asset('resources/img/dc-logo-bg.png');
 
     $comics = include(__DIR__ . '/../config/comics.php');
+    $selectedComic = null;
+    foreach ($comics as $comic) {
+        if ($comic['id'] == $id) {
+            $selectedComic = $comic;
+            break;
+        }
+    }
 
-    return view('comicsbonus', compact('comics', 'links', 'icons', 'linkss'));
+    if ($selectedComic === null) {
+        abort(404);
+    }
+
+    return view('comicsbonus', compact('selectedComic','comics', 'links', 'icons', 'linkss'));
 })->name('item');
 
